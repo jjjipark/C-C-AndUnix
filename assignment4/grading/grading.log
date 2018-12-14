@@ -1,0 +1,282 @@
+/bin/cp /cs/groupprojects/cis330/assignments/assignment4/master/g_test_input.txt . > /dev/null 2>&1/bin/cp /cs/groupprojects/cis330/assignments/assignment4/master/main.cpp . > /dev/null 2>&1/bin/cp /cs/groupprojects/cis330/assignments/assignment4/master/g_Makefile . > /dev/null 2>&1
+-----<< Problem 1: >>------
+[2018-02-10 12:12:31.193743] g++ -std=c++11 -c maze.cpp
+Inputs: 
+STDOUT:
+
+STDERR:
+PASS
+-----<< Problem 2: >>------
+[2018-02-10 12:12:31.633236] make test-maze.exe
+Inputs: 
+STDOUT:
+g++ -c -std=c++14 -g -Wall maze_test.cpp 
+g++ -o test-maze.exe maze_test.o maze.o
+
+STDERR:
+PASS
+-----<< Problem 2: >>------
+[2018-02-10 12:12:32.331787] ./test-maze.exe g_test_input.txt
+Inputs: 
+STDOUT:
+ENTER
+UP
+RIGHT
+UP
+UP
+RIGHT
+LEFT
+LEFT
+LEFT
+UP
+UP
+RIGHT
+RIGHT
+RIGHT
+LEFT
+UP
+UP
+RIGHT
+UP
+UP
+EXIT
+***
+ENTER
+UP
+RIGHT
+RIGHT
+RIGHT
+UP
+UP
+UP
+UP
+UP
+UP
+LEFT
+LEFT
+UP
+UP
+RIGHT
+RIGHT
+RIGHT
+EXIT
+***
+ENTER
+UP
+RIGHT
+RIGHT
+RIGHT
+RIGHT
+RIGHT
+LEFT
+UP
+DOWN
+LEFT
+LEFT
+UP
+LEFT
+UP
+DOWN
+LEFT
+LEFT
+UP
+LEFT
+UP
+LEFT
+UP
+UP
+LEFT
+RIGHT
+DOWN
+DOWN
+LEFT
+LEFT
+UP
+DOWN
+DOWN
+DOWN
+LEFT
+EXIT
+***
+
+STDERR:
+
+-----<< Problem 2: >>------
+[2018-02-10 12:12:32.373857] diff  -y --suppress-common-lines -B -b test-maze.output g_test-maze.master | wc -l
+Inputs: 
+STDOUT:
+0
+
+STDERR:
+Found 0 differences (within acceptable tolerance)
+PASS
+-----<< Problem 3: >>------
+[2018-02-10 12:12:32.422263] make test-main.exe
+Inputs: 
+STDOUT:
+g++ -c -std=c++14 -g -Wall main.cpp 
+g++ -c -std=c++14 -g -Wall utils.cpp 
+g++ -o test-main.exe main.o maze.o utils.o
+
+STDERR:
+PASSPASSPASS
+-----<< Problem 3: >>------
+[2018-02-10 12:12:33.587002] ./test-main.exe g_test_input.txt
+Inputs: 
+STDOUT:
+size = 10
+Step 0:
+@@@@@@@@.@
+@...@....@
+@...@@@..@
+@.@@@...@@
+@..@@....@
+@...@.@@@@
+@..@.....@
+@..@....@@
+@@......@@
+@@@@@@x@@@
+Step 1:
+@@@@@@@@.@
+@...@....@
+@...@@@..@
+@.@@@...@@
+@..@@....@
+@...@.@@@@
+@..@.....@
+@..@....@@
+@@....x.@@
+@@@@@@x@@@
+Step 2:
+@@@@@@@@.@
+@...@....@
+@...@@@..@
+@.@@@...@@
+@..@@....@
+@...@.@@@@
+@..@.....@
+@..@....@@
+@@.....x@@
+@@@@@@x@@@
+Step 3:
+@@@@@@@@.@
+@...@....@
+@...@@@..@
+@.@@@...@@
+@..@@....@
+@...@.@@@@
+@..@.....@
+@..@...x@@
+@@......@@
+@@@@@@x@@@
+Step 4:
+@@@@@@@@.@
+@...@....@
+@...@@@..@
+@.@@@...@@
+... omitted 1017 lines ...
+@@@@@@x@@@@@@@@
+Step 32:
+@@@@@@@@@@@@@@@
+@...@.@@.....@@
+@..@..........@
+@.@@.@.@@....@@
+@@..@..@.....@@
+@@..@..@.@.@@.@
+@@@..@....@@..@
+@.@@@@@@....@.@
+@@..@....@....@
+@.@.@..@..@@@.@
+@....@.@@@@..@@
+@x@...@.@.@...@
+..@.@....@.@@.@
+@@..........@.@
+@@@@@@x@@@@@@@@
+Step 33:
+@@@@@@@@@@@@@@@
+@...@.@@.....@@
+@..@..........@
+@.@@.@.@@....@@
+@@..@..@.....@@
+@@..@..@.@.@@.@
+@@@..@....@@..@
+@.@@@@@@....@.@
+@@..@....@....@
+@.@.@..@..@@@.@
+@....@.@@@@..@@
+@.@...@.@.@...@
+.x@.@....@.@@.@
+@@..........@.@
+@@@@@@x@@@@@@@@
+@@@@@@@@@@@@@@@
+@...@.@@.....@@
+@..@..........@
+@.@@.@.@@....@@
+@@..@..@.....@@
+@@..@..@.@.@@.@
+@@@..@....@@..@
+@.@@@@@@....@.@
+@@..@....@....@
+@.@.@..@..@@@.@
+@....@.@@@@..@@
+@.@...@.@.@...@
+x.@.@....@.@@.@
+@@..........@.@
+@@@@@@x@@@@@@@@
+YAY! Maze solved!
+
+STDERR:
+
+-----<< Problem 3: >>------
+[2018-02-10 12:12:33.646164] diff  -y --suppress-common-lines -B -b maze.output g_test-main.master | wc -l
+Inputs: 
+STDOUT:
+0
+
+STDERR:
+Found 0 differences (within acceptable tolerance)
+PASS
+-----<< Problem 4: >>------
+[2018-02-10 12:12:33.698617] make test-wrapper
+Inputs: 
+STDOUT:
+
+STDERR:
+make: *** No rule to make target 'test-wrapper'.  Stop.
+
+Error: Failed to compile and link mazewrapper.cpp using Makefile.
+-----<< Problem 4: >>------
+[2018-02-10 12:12:33.744707] make mazewrapper
+Inputs: 
+STDOUT:
+g++     mazewrapper.cpp   -o mazewrapper
+<builtin>: recipe for target 'mazewrapper' failed
+
+STDERR:
+/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o: In function `_start':
+(.text+0x20): undefined reference to `main'
+collect2: error: ld returned 1 exit status
+make: *** [mazewrapper] Error 1
+
+Error: Failed to compile and link mazewrapper.cpp using Makefile.
+-----<< Problem 4: >>------
+[2018-02-10 12:12:33.901425] g++ -std=c++11 -c mazewrapper.cpp
+Inputs: 
+STDOUT:
+
+STDERR:
+PASS
+-----<< Problem 4: >>------
+[2018-02-10 12:12:33.984413] /bin/rm -f mazewrapper *.o && make -f g_Makefile mazewrapper
+Inputs: 
+STDOUT:
+g++     mazewrapper.cpp   -o mazewrapper
+<builtin>: recipe for target 'mazewrapper' failed
+
+STDERR:
+/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o: In function `_start':
+(.text+0x20): undefined reference to `main'
+collect2: error: ld returned 1 exit status
+make: *** [mazewrapper] Error 1
+
+Error: Failed to link test program: mazewrapper.
