@@ -1,2 +1,2 @@
-# C-C-AndUnix
-University of Oregon cis330
+# CIS330
+University of Oregon C/C++ and Unix
